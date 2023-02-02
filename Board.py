@@ -4,9 +4,9 @@ class Board:
         self.height = size[1]
         self.boardGen()
 
-    def boardGen(self):
+    def boardGen(self, function=lambda x,y:0):
         self.board = [
-            [0 for _ in range(self.width)] for __ in range(self.height)
+            [function(x,y) for x in range(self.width)] for y in range(self.height)
             ]
 
     def boardConfig(self,
